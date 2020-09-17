@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-
+import React, { useState,useEffect, useRef } from "react";
 function TodoForm(props) {
   const [input, setInput] = useState("");
+  const ref = useRef(null)
   const handleCHange = (e) => {
       setInput(e.target.value)
   }
+
+  useEffect(() => {
+    ref.current.focus()
+  })
   const handlesubmit =(e) => { 
       e.preventDefault();
       props.onSubmit({ 
@@ -22,8 +26,9 @@ function TodoForm(props) {
         value={input}
         placeholder="Add a Todo"
         onChange={handleCHange}
+        ref={ref}
       />
-      <button className="btn waves-effect waves-light" type="submit"> Submit</button>
+      <button className='todo-button' type="submit"> Submit</button>
     </form>
   );
 }
