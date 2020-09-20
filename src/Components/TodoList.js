@@ -12,7 +12,8 @@ function TodoList() {
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    console.log(...todos);
+    // console.log('%c', ...todos + 'color: green; font-weight: bold;');
+
   }
   const updateTodo = (todoId,newValue) => { 
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
@@ -22,7 +23,7 @@ function TodoList() {
   }
 
   const removeTodo =(id) => { 
-    const removeArr =[...todos].filter(todo => todo.id != id )
+    const removeArr =[...todos].filter(todo => todo.id !== id )
     setTodos(removeArr)
   }
 
@@ -37,7 +38,7 @@ function TodoList() {
   };
   return (
     <div>
-      <h1 className=" center blue-text">Planning Sth for Today ??</h1>
+      <h1 className=" center blue-text">Planning Something for Today ??</h1>
       <TodoForm onSubmit={addTodo} />
       <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updateTodo={updateTodo} />
     </div>
