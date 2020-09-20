@@ -1,4 +1,4 @@
-Todo App created using React Hooks (Begginer Level )
+Todo App created using React Hooks (Beginer Level )
 
 ## Available Scripts
 ### `npm install `
